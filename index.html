@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="app">
+        <cnode-filter v-model="types"></cnode-filter>
+        
+        <div v-for="item in list" class="contents" v-show="loaded">
+            <cnode-content :article="item"></cnode-content>
+        </div>
+
+        <cnode-loading :show="!loaded"></cnode-loading>
+
+        <cnode-page :total='total' v-model='page'></cnode-page>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/cnode-filter.js"></script>
+    <script src="./js/cnode-content.js"></script>
+    <script src="./js/cnode-page.js"></script>
+    <script src="./js/cnode-loading.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
